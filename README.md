@@ -1,3 +1,3 @@
-# Women in AI Data Engineering Bootcamp
+# Women in AI Data Analytics and Engineering Bootcamp
 
-This repository contains all the code from all the Data Engineering Bootcamp classes by Sarah Haq.
+This repository contains all the code from all the Bootcamp classes.
