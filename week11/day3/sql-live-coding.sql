@@ -105,3 +105,49 @@ where rank = 1
 order by total_order_value desc
 ;
 
+--left joins
+select ot.*,
+	   sd.description 
+from bootcamp.online_transactions ot 
+left join bootcamp.stock_description sd on ot.stock_code = sd.stock_code;
+
+-- # of rows
+select count(*)
+from bootcamp.online_transactions ot 
+left join bootcamp.stock_description sd on ot.stock_code = sd.stock_code;
+-- 551k rows. This should be same number as left table, BUT THERE IS A DATA ERROR in the stock desc table.
+
+-- # of missing stock description
+select count(distinct ot.stock_code)
+from bootcamp.online_transactions ot 
+left join bootcamp.stock_description sd on ot.stock_code = sd.stock_code
+where description is null;
+-- 165 stocks that have missing desc
+
+-- inner joins
+select ot.*,
+	   sd.description
+from bootcamp.online_transactions ot 
+join bootcamp.stock_description sd on ot.stock_code = sd.stock_code;
+
+-- # of rows
+select count(*)
+from bootcamp.online_transactions ot 
+join bootcamp.stock_description sd on ot.stock_code = sd.stock_code;
+-- 549k rows. 
+
+-- # of missing stock description
+select count(distinct ot.stock_code)
+from bootcamp.online_transactions ot 
+join bootcamp.stock_description sd on ot.stock_code = sd.stock_code
+where description is null;
+-- inner join can not give you this information as it is mapping where both tables have the same stock doee
+
+
+
+
+
+
+
+
+
