@@ -35,5 +35,6 @@ ot_wout_duplicates = identify_and_remove_duplicates(ot_transformed)
 print("\nLoading data to s3 bucket")
 df_to_s3(ot_wout_duplicates, key, s3_bucket, aws_access_key_id, aws_secret_access_key)
 
+# if you want to you can calculate
 execution_time = datetime.now() - start_time
 print(f"Total execution time (hh:mm:ss) {execution_time}")
