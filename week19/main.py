@@ -16,7 +16,7 @@ port = os.getenv("port")
 host = os.getenv("host")
 user_name = os.getenv("user")
 password = os.getenv("password")
-# reading the variables that will connect to s3
+# defining the variables that will connect to s3
 key="transformations_final/sh_online_trans_transformed.pkl"
 s3_bucket="sep-bootcamp"
 aws_access_key_id=os.getenv("aws_access_key_id")
