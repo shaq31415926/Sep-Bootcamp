@@ -1,4 +1,5 @@
 # ETL Pipeline v1
+by Sarah Haq
 
 ## Introduction
 This code contains the steps to build an ETL pipeline that carries out the following tasks:
