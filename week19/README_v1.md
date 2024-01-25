@@ -13,17 +13,18 @@ The minimum requirements:
 
 ## Instructions on how to execute the code
 
-1. Clone the repository, and go to the week19 folder
-````
+1. Clone the repository, and change the directory to **Sep-Bootcamp/week19**:
+```
 git clone https://github.com/shaq31415926/Sep-Bootcamp.git
-````
+```
 
-2. Install the libraries that they need to run `main.py`
-````
+2. Install the libraries that you will need to run `main.py`
+```
 pip3 install -r requirements.txt
-````
+```
 
-3. Copy the `.env.copy` file to `.env`and fill out the environment variabls.
+3. Copy the `.env.copy` file to `.env`and fill out the environment variables.
+
 
 4. Run the `main.py` script
 Mac users:
