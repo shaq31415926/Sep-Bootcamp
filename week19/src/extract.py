@@ -36,7 +36,8 @@ def extract_transactional_data(dbname, host, port, user, password):
            cast(ot.invoice_date as datetime) as invoice_date,
            ot.price,
            ot.customer_id,
-           ot.country
+           ot.country,
+           round(ot.price * ot.quantity, 2) as total_order_value
     from bootcamp.online_transactions ot
     left join (select *
                from bootcamp.stock_description

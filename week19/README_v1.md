@@ -18,6 +18,11 @@ The minimum requirements:
 git clone https://github.com/shaq31415926/Sep-Bootcamp.git
 ```
 
+If you need a reminder how to clone a repository, check out this link [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+If you have never worked with git before, you will need to install it and you can find more information [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+
 2. Install the libraries that you will need to run `main.py`
 ```
 pip3 install -r requirements.txt

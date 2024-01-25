@@ -20,7 +20,7 @@ aws_access_key_id = os.getenv("aws_access_key_id")
 aws_secret_access_key_id = os.getenv("aws_secret_access_key_id")
 
 s3_bucket = "sep-bootcamp"
-key = "transformations_final/sh_online_trans_transformed.csv"
+key="etl-pipeline/sh_online_trans_transformed.csv"
 
 # load this file to redshift
 # read the s3 file and store as a data frame
@@ -33,6 +33,7 @@ if key[-4:] == '.pkl':
 if key[-4:] == '.csv':
     cleaned_data = pd.read_csv(response.get("Body"))
 
+print(cleaned_data.head())
 
 # create table in redshift
 # connect to redshift
@@ -40,7 +41,7 @@ connect = connect_to_redshift(dbname, host, port, user, password)
 cursor = connect.cursor()
 print(cursor)
 
-table_destination = "bootcamp.aa_online_transactions_fixed"
+table_destination = "bootcamp.online_transactions_fixed"
 
 # create the table in sql
 query = f"""
@@ -52,13 +53,14 @@ CREATE TABLE {table_destination} (
             invoice_date DATETIME,
             price FLOAT8,
             customer_id VARCHAR(6),
-            country VARCHAR(20))
+            country VARCHAR(20),
+            total_order_value FLOAT8)
             ;
 """
 
 # execute this is creating a table for the first time
-#cursor.execute(query)
-#connect.commit()
+cursor.execute(query)
+connect.commit()
 
 def load_from_s3_to_redshift(cursor,
                              table_destination, s3_bucket, key, aws_access_key_id,
