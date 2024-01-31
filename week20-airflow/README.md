@@ -1,5 +1,4 @@
-# Airflow Setuo
-by Sarah Haq
+# Airflow Setup
 
 
 ## Requirements
@@ -10,9 +9,9 @@ The minimum requirements:
   - Manual installation steps for older WSL version: [Docker WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
 
 
-## Instructions - if you have Docker Installed
+## Instructions
 
-1. Create a DockerFile which fetches a docker image to setup aiflow on your local machine.
+1. Create a DockerFile which fetches a docker image to setup airflow on your local machine:
 
 ```FROM puckel/docker-airflow```
 
@@ -24,5 +23,6 @@ Information about the image we are using can be found here: https://github.com/p
 
 3. Run airflow on port number 8080:
 ```docker run -d -p 8080:8080 local-airflow webserver```
+
 
 4. Access airflow webserver at http://localhost:8080
