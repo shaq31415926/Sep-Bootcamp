@@ -15,7 +15,8 @@ The minimum requirements:
 
 Information about the image we are using can be found here: https://github.com/puckel/docker-airflow
 
-2. If you have already launched airflow webserver, you need to kill all containers to use port localhost:8080 to host airflow:
+2. If you have already launched airflow webserver, you need to kill all containers to use port number 8080 to host airflow:
+
 ```docker stop $(docker ps -a -q)```
 
 3. Build a docker image called `local-airflow` on your local machine:
@@ -23,6 +24,7 @@ Information about the image we are using can be found here: https://github.com/p
 ```docker image build -t local-airflow .```
 
 4. Run airflow on port number 8080:
+
 ```docker run -d -p 8080:8080 local-airflow webserver```
 
 5. Access airflow webserver at http://localhost:8080
