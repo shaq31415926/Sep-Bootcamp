@@ -25,6 +25,12 @@ Information about the image we are using can be found here: https://github.com/p
 
 4. Run airflow on port number 8080:
 
+Without passing the .env file:
+
 ```docker run -d -p 8080:8080 local-airflow webserver```
+
+If you want to pass the .env file:
+
+```docker run --env-file .env -d -p 8080:8080 local-airflow webserver```
 
 5. Access airflow webserver at http://localhost:8080
